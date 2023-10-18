@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Aplikasi Statistik</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Aplikasi Statistik</h1>
-        <div class="data-entry">
-            <input type="text" id="id" placeholder="ID">
-            <input type="text" id="name" placeholder="Nama">
-            <input type="number" id="value" placeholder="Nilai">
-            <button id="add-button" class="action-button">Tambah</button>
-            <button id="update-button" class="action-button">Simpan</button>
-            <button id="cancel-button" class="action-button">Batal</button>
+<body class="bg-gray-200">
+    <div class="container mx-auto p-4 bg-white rounded shadow-lg">
+        <h1 class="text-3xl text-center font-semibold mb-4">Aplikasi Statistik</h1>
+        <div class="flex items-center space-x-4 mb-6">
+            <input type="text" id="id" class="border rounded px-2 py-1" placeholder="ID">
+            <input type="text" id="name" class="border rounded px-2 py-1" placeholder="Nama">
+            <input type="number" id="value" class="border rounded px-2 py-1" placeholder="Nilai">
+            <button id="add-button" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-1 rounded">Tambah</button>
+            <button id="update-button" class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-1 rounded hidden">Simpan</button>
+            <button id="cancel-button" class="bg-red-500 hover:bg-red-700 text-white px-4 py-1 rounded hidden">Batal</button>
         </div>
-        <table id="data-table">
+        <table id="data-table" class="w-full border-collapse border">
             <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nama</th>
-                    <th>Nilai</th>
-                    <th>Aksi</th>
+                <tr class="bg-blue-500 text-white">
+                    <th class="py-2">ID</th>
+                    <th class="py-2">Nama</th>
+                    <th class="py-2">Nilai</th>
+                    <th class="py-2">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Data akan ditampilkan di sini -->
             </tbody>
         </table>
-        <div class="statistics">
+        <div class="statistics mt-6">
             <p>Batas Atas: <span id="upper-bound">-</span></p>
             <p>Batas Bawah: <span id="lower-bound">-</span></p>
             <p>Mean: <span id="mean">-</span></p>
