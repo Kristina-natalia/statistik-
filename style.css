@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    background-color: #f4f4f4;
     margin: 20px;
     padding: 20px;
     border-radius: 5px;
@@ -17,32 +17,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #333;
-}
-
-.menu {
-    margin-top: 20px;
-}
-
-.tabs {
-    display: flex;
-    justify-content: center;
-}
-
-.tab-btn {
-    background-color: #4299e1;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.tab-btn:hover {
-    background-color: #2b6cb0;
-}
-
-.tab-content {
-    display: none;
+    color: #4299e1;
 }
 
 .data-entry {
@@ -65,6 +40,7 @@ h1 {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .action-button:hover {
@@ -96,6 +72,11 @@ th, td {
 
 .edit-button {
     background-color: #63ba69;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .edit-button:hover {
@@ -104,6 +85,11 @@ th, td {
 
 .delete-button {
     background-color: #d9534f;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .delete-button:hover {
@@ -114,9 +100,5 @@ th, td {
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
-}
-
-.chart-container {
-    width: 80%;
-    margin: 20px auto;
+    color: #333;
 }
