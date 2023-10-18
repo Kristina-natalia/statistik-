@@ -9,7 +9,7 @@ app.use(express.static('public'));
 
 app.post('/calculate', (req, res) => {
     const data = req.body.data;
-    const process = spawn('your_cpp_program', data);
+    const process = spawn('hitung_statistik.cpp', data);
     let output = '';
 
     process.stdout.on('data', (data) => {
