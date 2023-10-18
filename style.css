@@ -1,0 +1,67 @@
+/* styles.css */
+
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Data Entry */
+.data-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.data-entry input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+.data-entry button {
+    background-color: #4299e1;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Data Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+}
+
+/* Statistics */
+.statistics {
+    text-align: left;
+}
+
+/* Button Styling */
+button {
+    background-color: #4299e1;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2b6cb0;
+}
