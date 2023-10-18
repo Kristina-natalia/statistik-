@@ -1,148 +1,92 @@
-// JavaScript code for CRUD operations and statistics calculations
+/* styles.css */
 
-let data = [];
-let selectedDataIndex = -1;
-
-// Function to add a new data entry
-function addData() {
-    const id = document.getElementById('id').value;
-    const name = document.getElementById('name').value;
-    const value = parseFloat(document.getElementById('value').value);
-
-    if (!isNaN(value)) {
-        const newData = { id, name, value };
-        data.push(newData);
-        updateTable();
-        clearForm();
-        calculateStatistics();
-    } else {
-        alert('Nilai harus berupa angka.');
-    }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
-// Function to update a data entry
-function updateData() {
-    if (selectedDataIndex !== -1) {
-        const id = document.getElementById('id').value;
-        const name = document.getElementById('name').value;
-        const value = parseFloat(document.getElementById('value').value);
-
-        if (!isNaN(value)) {
-            data[selectedDataIndex] = { id, name, value };
-            updateTable();
-            clearForm();
-            calculateStatistics();
-        } else {
-            alert('Nilai harus berupa angka.');
-        }
-    }
+.container {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-// Function to delete a data entry
-function deleteData() {
-    if (selectedDataIndex !== -1) {
-        data.splice(selectedDataIndex, 1);
-        selectedDataIndex = -1;
-        updateTable();
-        clearForm();
-        calculateStatistics();
-    }
+h1 {
+    text-align: center;
+    color: #333;
 }
 
-// Function to update the table with current data
-function updateTable() {
-    const tableBody = document.querySelector('table tbody');
-    tableBody.innerHTML = '';
-
-    for (let i = 0; i < data.length; i++) {
-        const row = tableBody.insertRow();
-        row.innerHTML = `<tr>
-            <td>${data[i].id}</td>
-            <td>${data[i].name}</td>
-            <td>${data[i].value}</td>
-            <td>
-                <button class="edit-button" onclick="editData(${i})">Edit</button>
-                <button class="delete-button" onclick="deleteData(${i})">Hapus</button>
-            </td>
-        </tr>`;
-    }
+.data-entry {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-// Function to clear the data input form
-function clearForm() {
-    document.getElementById('id').value = '';
-    document.getElementById('name').value = '';
-    document.getElementById('value').value = '';
-    document.getElementById('add-button').style.display = 'block';
-    document.getElementById('update-button').style.display = 'none';
-    document.getElementById('cancel-button').style display = 'none';
+.data-entry input {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-// Function to edit a data entry
-function editData(index) {
-    selectedDataIndex = index;
-    const selectedData = data[index];
-    document.getElementById('id').value = selectedData.id;
-    document.getElementById('name').value = selectedData.name;
-    document.getElementById('value').value = selectedData.value;
-    document.getElementById('add-button').style.display = 'none';
-    document.getElementById('update-button').style.display = 'block';
-    document.getElementById('cancel-button').style.display = 'block';
+.action-button {
+    background-color: #4299e1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
-// Function to calculate statistics
-function calculateStatistics() {
-    const values = data.map(item => item.value);
-
-    if (values.length === 0) {
-        document.getElementById('mean').textContent = '-';
-        document.getElementById('median').textContent = '-';
-        document.getElementById('modus').textContent = '-';
-        document.getElementById('upper-bound').textContent = '-';
-        document.getElementById('lower-bound').textContent = '-';
-    } else {
-        const sum = values.reduce((total, value) => total + value, 0);
-        const mean = sum / values.length;
-        const sortedValues = values.slice().sort((a, b) => a - b);
-        const middle = Math.floor(sortedValues.length / 2);
-        const median = (sortedValues.length % 2 === 0) ?
-            (sortedValues[middle - 1] + sortedValues[middle]) / 2 :
-            sortedValues[middle];
-        const counts = {};
-        let maxCount = 0;
-        let mode = [];
-
-        values.forEach(value => {
-            counts[value] = (counts[value] || 0) + 1;
-            if (counts[value] > maxCount) {
-                maxCount = counts[value];
-                mode = [value];
-            } else if (counts[value] === maxCount && !mode.includes(value)) {
-                mode.push(value);
-            }
-        });
-
-        const upperBound = sortedValues[Math.ceil(0.75 * sortedValues.length)];
-        const lowerBound = sortedValues[Math.floor(0.25 * sortedValues.length)];
-
-        document.getElementById('mean').textContent = mean.toFixed(2);
-        document.getElementById('median').textContent = median.toFixed(2);
-        document.getElementById('modus').textContent = mode.join(', ');
-        document.getElementById('upper-bound').textContent = upperBound.toFixed(2);
-        document.getElementById('lower-bound').textContent = lowerBound.toFixed(2);
-    }
+.action-button:hover {
+    background-color: #2b6cb0;
 }
 
-// Event listener for the "Tambah" button
-document.getElementById('add-button').addEventListener('click', addData);
+#update-button, #cancel-button {
+    display: none;
+}
 
-// Event listener for the "Simpan" button
-document.getElementById('update-button').addEventListener('click', updateData);
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-// Event listener for the "Batal" button
-document.getElementById('cancel-button').addEventListener('click', clearForm);
+thead {
+    background-color: #4299e1;
+    color: #fff;
+}
 
-// Initialize the table and clear the form
-updateTable();
-clearForm();
-calculateStatistics();
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+.edit-button {
+    background-color: #63ba69;
+}
+
+.edit-button:hover {
+    background-color: #4e9e57;
+}
+
+.delete-button {
+    background-color: #d9534f;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+.statistics {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
