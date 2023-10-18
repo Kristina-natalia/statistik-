@@ -4,37 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Aplikasi Statistik</title>
 </head>
 <body>
     <div class="container">
         <h1>Aplikasi Statistik</h1>
-        <div class="menu">
-            <div class="tabs">
-                <button class="tab-btn" id="tab-mean">Mean</button>
-                <button class="tab-btn" id="tab-modus">Modus</button>
-                <button class="tab-btn" id="tab-median">Median</button>
-            </div>
-            <div id="mean-tab" class="tab-content">
-                <h2>Mean</h2>
-                <div class="chart-container">
-                    <canvas id="mean-chart"></canvas>
-                </div>
-            </div>
-            <div id="modus-tab" class="tab-content">
-                <h2>Modus</h2>
-                <p>Modus: <span id="modus">-</span></p>
-            </div>
-            <div id="median-tab" class="tab-content">
-                <h2>Median</h2>
-                <p>Median: <span id="median">-</span></p>
-            </div>
-        </div>
         <div class="data-entry">
             <input type="text" id="id" placeholder="ID">
             <input type="text" id="name" placeholder="Nama">
-            <input type="text" id="value" placeholder="Nilai">
+            <input type="number" id="value" placeholder="Nilai">
             <button id="add-button" class="action-button">Tambah</button>
             <button id="update-button" class="action-button">Simpan</button>
             <button id="cancel-button" class="action-button">Batal</button>
@@ -56,6 +34,8 @@
             <p>Batas Atas: <span id="upper-bound">-</span></p>
             <p>Batas Bawah: <span id="lower-bound">-</span></p>
             <p>Mean: <span id="mean">-</span></p>
+            <p>Median: <span id="median">-</span></p>
+            <p>Modus: <span id="modus">-</span></p>
         </div>
     </div>
     <script src="script.js"></script>
