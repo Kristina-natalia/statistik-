@@ -1,67 +1,119 @@
 /* styles.css */
 
-/* Container */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    background-color: #fff;
+    margin: 20px;
     padding: 20px;
-    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
 h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
 }
 
-/* Data Entry */
-.data-entry {
+.menu {
+    margin-top: 20px;
+}
+
+.tabs {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.tab-btn {
+    background-color: #4299e1;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.tab-btn:hover {
+    background-color: #2b6cb0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.data-entry {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .data-entry input {
-    flex: 1;
-    padding: 8px;
-    margin-right: 10px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.data-entry button {
+.action-button {
     background-color: #4299e1;
     color: #fff;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
 }
 
-/* Data Table */
+.action-button:hover {
+    background-color: #2b6cb0;
+}
+
+#update-button, #cancel-button {
+    display: none;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
 }
 
-table th,
-table td {
-    border: 1px solid #e2e8f0;
+thead {
+    background-color: #4299e1;
+    color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    text-align: center;
     padding: 10px;
 }
 
-/* Statistics */
+.edit-button {
+    background-color: #63ba69;
+}
+
+.edit-button:hover {
+    background-color: #4e9e57;
+}
+
+.delete-button {
+    background-color: #d9534f;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
 .statistics {
-    text-align: left;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
 }
 
-/* Button Styling */
-button {
-    background-color: #4299e1;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #2b6cb0;
-}
+/* Gaya tambahan sesuai kebutuhan Anda */
