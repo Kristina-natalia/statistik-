@@ -130,7 +130,7 @@ function saveData() {
     selectedDataIndex = -1;
     showData();
     clearInput();
-    document.getElementById('add-button').style display = 'inline';
+    document.getElementById('add-button').style.display = 'inline';
     document.getElementById('update-button').style.display = 'none';
     document.getElementById('cancel-button').style.display = 'none';
     calculateBounds();
