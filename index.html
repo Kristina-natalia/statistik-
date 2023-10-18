@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Aplikasi Statistik</title>
 </head>
 <body>
@@ -17,15 +18,17 @@
             </div>
             <div id="mean-tab" class="tab-content">
                 <h2>Mean</h2>
-                <p>Mean: <span id="mean">-</span></p>
+                <div class="chart-container">
+                    <canvas id="mean-chart"></canvas>
+                </div>
             </div>
             <div id="modus-tab" class="tab-content">
                 <h2>Modus</h2>
-                <p>Modus: <span id="modus">-</span></p>
+                <!-- Isi konten untuk Modus -->
             </div>
             <div id="median-tab" class="tab-content">
                 <h2>Median</h2>
-                <p>Median: <span id="median">-</span></p>
+                <!-- Isi konten untuk Median -->
             </div>
         </div>
         <div class="data-entry">
