@@ -116,4 +116,8 @@ th, td {
     font-weight: bold;
 }
 
-/* Gaya tambahan sesuai kebutuhan Anda */
+/* Gaya tambahan untuk grafik Mean */
+.chart-container {
+    width: 80%;
+    margin: 20px auto;
+}
